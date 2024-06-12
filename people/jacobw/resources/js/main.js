@@ -16,7 +16,7 @@ selectElement.addEventListener('change', (event) => {
 
 });
 
-activate.addEventListener('click', (event) => {
+activate.addEventListener('click', event => {
 
     event.preventDefault();
 
@@ -45,7 +45,8 @@ function fetchNewDogImage() {
 
         .then(data => {
             const imageUrl = data.url;
-            const img = document.createElement('img');
+            const img = document.getElementById('random-dog');
+            //const img = document.createElement('img');
             const filtered = imageUrl.slice(-4).toLowerCase();
             if (filtered === '.mp4' || filtered === 'webm') {
                 fetchNewDogImage();
